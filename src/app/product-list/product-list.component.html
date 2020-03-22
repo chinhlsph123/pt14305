@@ -1,3 +1,4 @@
+<div class="row">
 <div ngClass="col-lg-4 col-md-6 mb-4" *ngFor="let product of products">
   <div class="card h-100">
     <a href="#"><img class="card-img-top" [src]="product.img" alt=""></a>
@@ -13,7 +14,7 @@
       <!-- <button class="btn btn-primary d-block w-100 btn-lg" (click)="detailProduct(product)">
         click me
       </button> -->
-                    <button class="btn btn-primary d-block w-100 btn-lg" (click)="removeItem(product.id)">delete</button>
+       <button class="btn btn-primary d-block w-100 btn-lg" (click)="removeItem(product.id)">delete</button>
       <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
     </div>
   </div>

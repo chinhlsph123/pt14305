@@ -6,6 +6,7 @@ import { Product } from './Product';
 @Injectable()
 export class ProductService {
   products = data;
+  selected: Product;
   constructor() { }
 
   getProducts(){
