@@ -1,31 +1,3 @@
-<div class="row">
-  <table class="table">
-    <thead>
-      <tr>
-        <th scope="col">id</th>
-        <th scope="col">Tên Sản Phẩm</th>
-        <th scope="col">Gía</th>
-        <th scope="col">Đánh giá</th>
-        <th></th>
-      </tr>
-    </thead>
-    <tbody *ngFor="let product of products">
-      <tr>
-        <th scope="row">{{product.id}}</th>
-        <td>{{product.name}}</td>
-        <div *ngIf="selected">
-          <td>${{selected.price}}</td>
-          <td>{{selected.desc}}</td>
-          <td></td>
-        </div>
-        <td><button class="btn btn-primary d-block w-100 btn-lg" (click)="detailProduct(product)">
-            Detail</button></td>
-        <td><button class="btn btn-primary d-block w-100 btn-lg" (click)="removeItem(product.id)">delete</button></td>
-      </tr>
-    </tbody>
-  </table>
-</div>
-
 <div ngClass="col-lg-4 col-md-6 mb-4" *ngFor="let product of products">
   <div class="card h-100">
     <a href="#"><img class="card-img-top" [src]="product.img" alt=""></a>
@@ -35,15 +7,13 @@
       </h4>
       <h5>${{product.price}}</h5>
       <p class="card-text">{{product.desc}}</p>
-      <!-- <p class="card-text">{{product.status ? 'OnStock' : 'OutStock'}}</p> -->
       <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!</p>
     </div>
     <div class="card-footer">
-      <!-- <button class="btn btn-primary" (click)="changeStatus()">Click</button> -->
-      <!-- <input type="text" (keyup)="changeName($event)" > -->
-      <button class="btn btn-primary d-block w-100 btn-lg" (click)="detailProduct(product)">
+      <!-- <button class="btn btn-primary d-block w-100 btn-lg" (click)="detailProduct(product)">
         click me
-      </button>
+      </button> -->
+                    <button class="btn btn-primary d-block w-100 btn-lg" (click)="removeItem(product.id)">delete</button>
       <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
     </div>
   </div>
