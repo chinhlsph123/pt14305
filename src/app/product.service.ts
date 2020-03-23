@@ -13,7 +13,7 @@ export class ProductService {
     return this.products;
   }
   getProduct(id){//du lieuj chi tiet
-    return this.products.find(product => product.id == id);
+    return this.products.find(x=> x.id == id);
   }
   addProduct(product){
     let newObj = { id: 6, ...product };
