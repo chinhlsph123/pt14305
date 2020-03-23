@@ -12,7 +12,11 @@ export class ProductListComponent implements OnInit {
   constructor(
     private productService: ProductService
   ) { }
+  clickDetail(product){
+    this.selected=product;
+     console.log(product);
 
+  }
   ngOnInit() {
     this.getProducts();
   }

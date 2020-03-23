@@ -16,7 +16,7 @@ export const data: Product[] = [
     "id": 84,
     "name": "Theem",
     "price":14.00,
-    "image": "https://dummyimage.com/275x175/000/fff",
+   "image": "https://dummyimage.com/275x175/000/fff",
     "description": "Dynamic Data Designer"
   },
   {
