@@ -1,21 +1,26 @@
 <div class="row">
-<div ngClass="col-lg-4 col-md-6 mb-4" *ngFor="let product of products">
-  <div class="card h-100">
-    <a href="#"><img class="card-img-top" [src]="product.img" alt=""></a>
-    <div class="card-body">
-      <h4 class="card-title">
-        <a href="#">{{product.name}}</a>
-      </h4>
-      <h5>${{product.price}}</h5>
-      <p class="card-text">{{product.desc}}</p>
-      <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!</p>
-    </div>
-    <div class="card-footer">
-      <!-- <button class="btn btn-primary d-block w-100 btn-lg" (click)="detailProduct(product)">
+	<div ngClass="col-lg-4 col-md-6 mb-4" *ngFor="let product of products">
+		<div class="card h-100">
+			<a href="#"><img class="card-img-top" [src]="product.img" alt=""></a>
+				<div class="card-body">
+					<h4 class="card-title">
+						<a href="#">{{product.id}}</a>
+					</h4>
+					<h4 class="card-title">
+						<a href="#">{{product.name}}</a>
+					</h4>
+					<h5>${{product.price}}</h5>
+					<p class="card-text">{{product.desc}}</p>
+					<p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam
+						aspernatur!</p>
+				</div>
+				<div class="card-footer">
+					<!-- <button class="btn btn-primary d-block w-100 btn-lg" (click)="detailProduct(product)">
         click me
       </button> -->
-       <button class="btn btn-primary d-block w-100 btn-lg" (click)="removeItem(product.id)">delete</button>
-      <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
-    </div>
-  </div>
-</div>
+					<button class="btn btn-primary d-block w-100 btn-lg" (click)="removeItem(product.id)">delete</button>
+
+					<small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
+				</div>
+		</div>
+	</div>

@@ -22,4 +22,8 @@ export class ProductListComponent implements OnInit {
   getProducts(){
     this.products = this.productService.getProducts();
   }
+    removeItem(id){
+    this.products = this.products.filter(x => x.id !== id);
+     
+  }
 }

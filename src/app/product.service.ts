@@ -12,12 +12,18 @@ export class ProductService {
   getProducts(){
     return this.products;
   }
+  getProduct(id){//du lieuj chi tiet
+    return this.products.find(product => product.id == id);
+  }
   addProduct(product){
     let newObj = { id: 6, ...product };
     this.products.push(newObj);
   }
+    updateProduct(product){
+    return this.products.map( item => item.id === product.id ? product : item);
+  }
      removeItem(id){
      return this.products = this.products.filter(product => product.id != id);
+        console.log(this.products)
    }
-
 }
