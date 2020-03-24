@@ -1,28 +1,33 @@
-import { Injectable } from "@angular/core";
-import { data } from "./MockData";
-import { Product } from "./Product";
+import { Injectable } from '@angular/core';
+import { data } from './MockData';
+import { Product } from './Product';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
+
+
 @Injectable()
 export class ProductService {
-  products = data;
-  selected: Product;
-  constructor() {}
+  api = 'https://5e79bac317314d001613358e.mockapi.io/product';
+  // products = data;
+  constructor(
+    private http: HttpClient
+  ) { }
 
-  getProducts() {
-    return this.products;
+  getProducts(): Observable<Product[]>{
+    return this.http.get<Product[]>(this.api);
+    // return this.products;
   }
-    getProduct(id){//du lieuj chi tiet
-    return (this.products.find(x => x.id == id));
-    
+  getProduct(id): Observable<Product>{
+    console.log(id);
+    return this.http.get<Product>(`${this.api}/${id}`);
   }
-  addProduct(product) {
-    let newObj = { id: 6, ...product };
-    this.products.push(newObj);
+  addProduct(product): Observable<Product>{
+    return this.http.post<Product>(`${this.api}`, product);
+    // let newObj = { id: 6, ...product };
+    // this.products.push(newObj);
   }
-  updateProduct(product) {
-    return this.products.map(item => (item.id === product.id ? product : item));
+  updateProduct(product): Observable<Product>{
+    return this.http.put<Product>(`${this.api}/${product.id}`, product);
   }
-  removeItem(id) {
-    return (this.products = this.products.filter(product => product.id != id));
-    console.log(this.products);
-  }
+
 }

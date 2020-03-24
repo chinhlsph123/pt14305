@@ -12,11 +12,7 @@ export class ProductListComponent implements OnInit {
   constructor(
     private productService: ProductService
   ) { }
-  clickDetail(product){
-    this.selected=product;
-     console.log(product);
 
-  }
   ngOnInit() {
     this.getProducts();
   }
@@ -24,10 +20,9 @@ export class ProductListComponent implements OnInit {
     this.selected = product;
   }
   getProducts(){
-    this.products = this.productService.getProducts();
-  }
-    removeItem(id){
-    this.products = this.products.filter(x => x.id !== id);
-     
+    this.productService.getProducts().subscribe(data => {
+      this.products = data;
+    })
+    // this.products = this.productService.getProducts();
   }
 }
