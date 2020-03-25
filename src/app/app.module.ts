@@ -18,10 +18,11 @@ import { ContactComponent } from './contact/contact.component';
 import { ServiceComponent } from './service/service.component';
 import { AppRoutingModule } from './app-routing.module';
 import { ProductDetailComponent } from './product-detail/product-detail.component';
+import { ProductEditComponent } from './product-edit/product-edit.component';
 
 @NgModule({
   imports:      [ BrowserModule,AppRoutingModule, FormsModule,HttpClientModule ],
-  declarations: [ AppComponent, HelloComponent, CategoryComponent, SlideComponent, ProductListComponent, ProductComponent, ProductManagerComponent, ProductAddComponent, AboutComponent, HomeComponent, ContactComponent, ServiceComponent, ProductDetailComponent ],
+  declarations: [ AppComponent, HelloComponent, CategoryComponent, SlideComponent, ProductListComponent, ProductComponent, ProductManagerComponent, ProductAddComponent, AboutComponent, HomeComponent, ContactComponent, ServiceComponent, ProductDetailComponent, ProductEditComponent ],
   bootstrap:    [ AppComponent ],
   providers: [ProductService]
 })
